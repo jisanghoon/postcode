@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- DAO인터페이스 연결 -->
+<mapper namespace="kr.co.home.postcode.dao.PostcodeDao">
+
+
+
+<!-- 쿼리문을 연결할 변수(ID)생성후 DTO(ID)와 연결 -->
+	<select id="selectAll" resultType="Postcode">
+		SELECT zipcode,sido,sigungu,doro,building1,building2 FROM post
+	</select>
+	
+	<select id="selectCodeWithAddressBySidoAndDoro" parameterType="Postcode" resultType="Postcode">
+		SELECT zipcode,sido,sigungu,doro,building1,building2 FROM post where sido=#{sido} and doro=#{doro} 
+	</select>
+	
+	<select id="selectSido" resultType="String" >
+			select distinct sido from post; 
+	</select>
+</mapper>
+
+
