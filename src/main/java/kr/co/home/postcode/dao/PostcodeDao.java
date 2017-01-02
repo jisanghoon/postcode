@@ -7,4 +7,5 @@ public interface PostcodeDao<T> {
 	List<T> selectAll();
 	List<T> selectCodeWithAddressBySidoAndDoro(T t);
 	List<String> selectSido();
+	System.out.println("fetch확인");
 }
