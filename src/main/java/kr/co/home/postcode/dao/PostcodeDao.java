@@ -6,5 +6,5 @@ public interface PostcodeDao<T> {
 	T selectByNo(int idx);
 	List<T> selectAll();
 	List<T> selectCodeWithAddressBySidoAndDoro(T t);
-	List<T> selectSido();
+	List<String> selectSido();
 }
